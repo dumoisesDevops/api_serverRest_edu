@@ -9,14 +9,13 @@ module.exports = defineConfig({
       return config;
     },
     video: false,
-    baseUrl: 'https://serverest.dev/',  
-  },
-  reporter: 'junit',
-  reporterOptions: {
-    mochaFile: 'results/output-[hash].xml',
-    toConsole: false
+    baseUrl: 'https://serverest.dev/',
+    reporter: "@shelex/cypress-allure-plugin",  // Reporter Allure
+    reporterOptions: {
+      resultsDir: "allure-results"  // Diretório dos resultados
+    }
   },
   env: {
-    allure: true
+    allure: true  // Definindo a variável de ambiente para Allure
   },
 });

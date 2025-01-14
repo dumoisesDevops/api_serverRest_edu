@@ -1,3 +1,6 @@
+import '@shelex/cypress-allure-plugin';
+
+
 // Post usuario ja existente 
 Cypress.Commands.add('postUsuario', (nome) => {
     cy.fixture('Usuario/postUsuario').then((items) => {
