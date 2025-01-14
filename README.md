@@ -52,8 +52,4 @@ git commit -m "<tipo>: descrição"
 
 Para qualquer dúvida sobre o projeto:
 
-<<<<<<< HEAD
 [Eduardo moises](eduardo.moisesqa@hotmail.com) 
-=======
-[Eduardo moises](eduardo.moisesqa@hotmail.com) 
->>>>>>> 1e66a6a2123380c26b3b1f046c8580571c62ea11
