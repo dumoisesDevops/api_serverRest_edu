@@ -35,7 +35,7 @@ describe('Testes de API endpojt usuario ', () => {
   });
 
   it('Nao existe id valido para excluir na base', () => {
-    cy.deleteUsuarioValido("0JZsXMQMtwCo0Xzc").then((response) => {
+    cy.deleteUsuarioValido("0v3CRatrxlwVozw5").then((response) => {
       expect(response.status).to.eq(200);
       expect(response.body).to.have.property("message", "Nenhum registro excluído")
 
@@ -43,7 +43,7 @@ describe('Testes de API endpojt usuario ', () => {
   });
 
   it('Deve excluir registro', () => {
-    cy.deleteUsuarioValido("0v3CRatrxlwVozw5").then((response) => {
+    cy.deleteUsuarioValido("o1luIBx5yfevXzzc").then((response) => {
       expect(response.status).to.eq(200);
       expect(response.body).to.have.property("message", "Registro excluído com sucesso")
 
