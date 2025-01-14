@@ -22,9 +22,24 @@ jobs:
           npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator
           npx cypress run --reporter mochawesome --reporter-options overwrite=false,html=false,json=true
 
+      # Gerar o relatório com Allure
+      - name: Generate Allure report
+        run: npm run allure:generate
+
+      # Exibir o relatório com Allure (não será útil em CI, mas está incluído)
+      - name: Open Allure report (optional)
+        run: npm run allure:open || true # Adicionando || true para evitar falha, pois abrir o relatório não funcionará em CI
+
       # Fazer upload do relatório de testes como artefato
-      - name: Upload test reports
+      - name: Upload Mochawesome report
         uses: actions/upload-artifact@v3
         with:
           name: mochawesome-report
           path: mochawesome-report/*.json
+
+      # Fazer upload do relatório Allure como artefato
+      - name: Upload Allure report
+        uses: actions/upload-artifact@v3
+        with:
+          name: allure-report
+          path: allure-report/*
