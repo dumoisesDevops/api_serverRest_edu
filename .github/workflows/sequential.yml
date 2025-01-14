@@ -6,7 +6,25 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      # Install npm dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
+      
+      # Instalar dependências e cache
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+      
+      # Executar Cypress com Mochawesome para gerar relatórios
+      - name: Run Cypress tests with Mochawesome
+        run: |
+          npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator
+          npx cypress run --reporter mochawesome --reporter-options overwrite=false,html=false,json=true
+
+      # Fazer upload do relatório de testes como artefato
+      - name: Upload test reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: mochawesome-report
+          path: mochawesome-report/*.json
