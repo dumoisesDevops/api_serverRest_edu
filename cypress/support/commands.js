@@ -50,7 +50,6 @@ Cypress.Commands.add('getUsuarios', () => {
 Cypress.Commands.add('deleteUsuarioValido', (id) => {
     cy.fixture('Usuario/deleteusuario').then((items) => {
         const specificItem = items.find(item => item._id === id);
-        // Realiza  o cadastro do novo usuario
         cy.api({
             url: `${Cypress.env('API_URL')}/usuarios/${id}`,
             method: 'DELETE',
