@@ -48,7 +48,7 @@ Cypress.Commands.add('getUsuarios', () => {
 });
 // Delet usuario  administrador
 Cypress.Commands.add('deleteUsuarioValido', (id) => {
-    cy.fixture('Usuario/deleteUsuario').then((items) => {
+    cy.fixture('Usuario/deleteusuario').then((items) => {
         const specificItem = items.find(item => item._id === id);
         // Realiza  o cadastro do novo usuario
         cy.api({
