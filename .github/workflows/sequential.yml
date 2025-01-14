@@ -26,7 +26,7 @@ jobs:
 
       # Executar Cypress sem Allure, apenas exibindo o resultado no terminal
       - name: Run Cypress tests
-        run: npx cypress run --env allure=false
+        run: npx cypress run
 
       # Verificar se algum teste falhou
       - name: Check Cypress test result
