@@ -1,0 +1,247 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 8,
+    "passes": 7,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-01-14T22:45:50.504Z",
+    "end": "2025-01-14T22:45:53.978Z",
+    "duration": 3474,
+    "testsRegistered": 8,
+    "passPercent": 87.5,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d627b505-6e74-497e-8872-727afd631ab0",
+      "title": "",
+      "fullFile": "cypress/e2e/usuario/usuario.cy.js",
+      "file": "cypress/e2e/usuario/usuario.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3eb288e3-b953-4dde-abd7-7c207257dde9",
+          "title": "Testes de API endpojt usuario ",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Nao permite cadastrar  usuario com email existente na base",
+              "fullTitle": "Testes de API endpojt usuario  Nao permite cadastrar  usuario com email existente na base",
+              "timedOut": null,
+              "duration": 1218,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.postUsuario(\"Fulano da Silva\").then(response => {\n  expect(response.status).to.eq(400);\n  expect(response.body).to.have.property('message', 'Este email já está sendo usado');\n});",
+              "err": {},
+              "uuid": "538c2134-6431-4e40-9dad-999cab1714a4",
+              "parentUUID": "3eb288e3-b953-4dde-abd7-7c207257dde9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve cadastrar novo usuario como administrador",
+              "fullTitle": "Testes de API endpojt usuario  Deve cadastrar novo usuario como administrador",
+              "timedOut": null,
+              "duration": 199,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.postUsuarioValido(\"true\").then(response => {\n  expect(response.status).to.eq(201);\n  expect(response.body).to.have.property(\"message\", \"Cadastro realizado com sucesso\");\n});",
+              "err": {},
+              "uuid": "dd2a4072-81cd-4f9d-a26a-b50de7cc0849",
+              "parentUUID": "3eb288e3-b953-4dde-abd7-7c207257dde9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve cadastrar novo usuario",
+              "fullTitle": "Testes de API endpojt usuario  Deve cadastrar novo usuario",
+              "timedOut": null,
+              "duration": 205,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.postUsuarioValido(\"false\").then(response => {\n  expect(response.status).to.eq(201);\n  expect(response.body).to.have.property(\"message\", \"Cadastro realizado com sucesso\");\n});",
+              "err": {},
+              "uuid": "75a60d24-6b48-41f8-8dd5-ebf9559ea314",
+              "parentUUID": "3eb288e3-b953-4dde-abd7-7c207257dde9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve listar usuários com sucesso",
+              "fullTitle": "Testes de API endpojt usuario  Deve listar usuários com sucesso",
+              "timedOut": null,
+              "duration": 566,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getUsuarios().then(response => {\n  expect(response.status).to.eq(200);\n});",
+              "err": {},
+              "uuid": "5830db3b-2100-4255-a441-ef41a5d7bb4a",
+              "parentUUID": "3eb288e3-b953-4dde-abd7-7c207257dde9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Nao existe id valido para excluir na base",
+              "fullTitle": "Testes de API endpojt usuario  Nao existe id valido para excluir na base",
+              "timedOut": null,
+              "duration": 203,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.deleteUsuarioValido(\"0JZsXMQMtwCo0Xzc\").then(response => {\n  expect(response.status).to.eq(200);\n  expect(response.body).to.have.property(\"message\", \"Nenhum registro excluído\");\n});",
+              "err": {},
+              "uuid": "2803d769-172e-48e0-b551-156b7fa8765f",
+              "parentUUID": "3eb288e3-b953-4dde-abd7-7c207257dde9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve excluir registro",
+              "fullTitle": "Testes de API endpojt usuario  Deve excluir registro",
+              "timedOut": null,
+              "duration": 377,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.deleteUsuarioValido(\"9Ud0uXf7v8gAr3JH\").then(response => {\n  expect(response.status).to.eq(200);\n  expect(response.body).to.have.property(\"message\", \"Registro excluído com sucesso\");\n});",
+              "err": {
+                "message": "AssertionError: expected { message: 'Nenhum registro excluído' } to have property 'message' of 'Registro excluído com sucesso', but got 'Nenhum registro excluído'",
+                "estack": "AssertionError: expected { message: 'Nenhum registro excluído' } to have property 'message' of 'Registro excluído com sucesso', but got 'Nenhum registro excluído'\n    at Context.eval (webpack:///./cypress/e2e/usuario/usuario.cy.js:48:36)",
+                "diff": "- 'Nenhum registro excluído'\n+ 'Registro excluído com sucesso'\n"
+              },
+              "uuid": "d73a0cf6-0ebd-4583-907e-94432b358ad1",
+              "parentUUID": "3eb288e3-b953-4dde-abd7-7c207257dde9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve atualizar um usuário existente",
+              "fullTitle": "Testes de API endpojt usuario  Deve atualizar um usuário existente",
+              "timedOut": null,
+              "duration": 193,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.putUsuarioValido(\"N64P75Kfvqu0p6NE\").then(response => {\n  expect(response.status).to.eq(200);\n  expect(response.body).to.have.property('message', 'Registro alterado com sucesso');\n});",
+              "err": {},
+              "uuid": "92751c0d-328c-4d78-bba0-c61665a24589",
+              "parentUUID": "3eb288e3-b953-4dde-abd7-7c207257dde9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve listar usuario por id",
+              "fullTitle": "Testes de API endpojt usuario  Deve listar usuario por id",
+              "timedOut": null,
+              "duration": 190,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getUsuarioValido(\"N64P75Kfvqu0p6NE\").then(response => {\n  expect(response.status).to.eq(200);\n});",
+              "err": {},
+              "uuid": "5d61003a-4d6b-4480-bcd3-c368a70b41ef",
+              "parentUUID": "3eb288e3-b953-4dde-abd7-7c207257dde9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "538c2134-6431-4e40-9dad-999cab1714a4",
+            "dd2a4072-81cd-4f9d-a26a-b50de7cc0849",
+            "75a60d24-6b48-41f8-8dd5-ebf9559ea314",
+            "5830db3b-2100-4255-a441-ef41a5d7bb4a",
+            "2803d769-172e-48e0-b551-156b7fa8765f",
+            "92751c0d-328c-4d78-bba0-c61665a24589",
+            "5d61003a-4d6b-4480-bcd3-c368a70b41ef"
+          ],
+          "failures": [
+            "d73a0cf6-0ebd-4583-907e-94432b358ad1"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 3151,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "Cypress Allure Report",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

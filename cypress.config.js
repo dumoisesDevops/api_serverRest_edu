@@ -10,12 +10,16 @@ module.exports = defineConfig({
     },
     video: false,
     baseUrl: 'https://serverest.dev/',
-    reporter: '@shelex/cypress-allure-plugin',  // Usando o Allure como reporter
+    reporter: "cypress-mochawesome-reporter",
     reporterOptions: {
-      resultsDir: 'allure-results',  // Diretório onde os resultados serão armazenados
+      charts: true,
+      reportPageTitle: "Cypress Allure Report",
+      embeddedScreenshots: true,
+      inlineAssets: true
     },
-  },
-  env: {
-    allure: true,  // Ativando Allure como variável de ambiente
-  },
+    env: {
+      allure: true
+    }
+  }
 });
+
