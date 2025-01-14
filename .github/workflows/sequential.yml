@@ -24,16 +24,16 @@ jobs:
       - name: Install npm dependencies
         run: npm install
 
-      # Executar os testes Cypress usando a ação oficial
+      # Executar os testes Cypress
       - name: Run Cypress tests
         uses: cypress-io/github-action@v6
-        with:
-          start: true
 
-      # Gerar o relatório do Allure
-      - name: Generate Allure report
-        run: npm run allure:generate
-
-      # Abrir o relatório Allure
-      - name: Open Allure report
-        run: npm run allure:open
+      # Verificar se algum teste falhou
+      - name: Check Cypress test result
+        run: |
+          if [ $? -eq 0 ]; then
+            echo "All tests passed!"
+          else
+            echo "Some tests failed"
+            exit 1
+          fi
