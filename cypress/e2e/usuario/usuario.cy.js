@@ -43,7 +43,7 @@ describe('Testes de API endpojt usuario ', () => {
   });
 
   it('Deve excluir registro', () => {
-    cy.deleteUsuarioValido("9Ud0uXf7v8gAr3JH").then((response) => {
+    cy.deleteUsuarioValido("0v3CRatrxlwVozw5").then((response) => {
       expect(response.status).to.eq(200);
       expect(response.body).to.have.property("message", "Registro excluído com sucesso")
 
