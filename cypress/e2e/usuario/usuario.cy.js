@@ -43,7 +43,7 @@ describe('Testes de API endpojt usuario ', () => {
   });
 
   it('Deve excluir registro', () => {
-    cy.deleteUsuarioValido("1XtzvKitrS85uEDW").then((response) => {
+    cy.deleteUsuarioValido("1sM8TIRGVUK083Dv").then((response) => {
       expect(response.status).to.eq(200);
       expect(response.body).to.have.property("message", "Registro excluído com sucesso")
 
@@ -52,7 +52,7 @@ describe('Testes de API endpojt usuario ', () => {
 
 
   it('Deve atualizar um usuário existente', () => {
-    cy.putUsuarioValido("1sM8TIRGVUK083Dv").then((response) => {
+    cy.putUsuarioValido("0uxuPY0cbmQhpEz1").then((response) => {
       expect(response.status).to.eq(200);
       expect(response.body).to.have.property('message', 'Registro alterado com sucesso');
     });
