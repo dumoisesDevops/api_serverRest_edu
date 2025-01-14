@@ -4,18 +4,18 @@ const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
-      // Implement node event listeners here
+      // Adiciona o Allure Writer para gerar resultados
       allureWriter(on, config);
       return config;
     },
     video: false,
     baseUrl: 'https://serverest.dev/',
-    reporter: "@shelex/cypress-allure-plugin",  // Reporter Allure
+    reporter: '@shelex/cypress-allure-plugin',  // Usando o Allure como reporter
     reporterOptions: {
-      resultsDir: "allure-results"  // Diretório dos resultados
-    }
+      resultsDir: 'allure-results',  // Diretório onde os resultados serão armazenados
+    },
   },
   env: {
-    allure: true  // Definindo a variável de ambiente para Allure
+    allure: true,  // Ativando Allure como variável de ambiente
   },
 });
