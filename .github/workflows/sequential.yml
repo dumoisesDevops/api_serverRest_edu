@@ -24,33 +24,16 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Gerar dados (caso seja necessário)
-      - name: Generate test data
-        run: npm run generate-data
+      # Executar Cypress sem relatórios personalizados, apenas com status
+      - name: Run Cypress tests
+        run: npx cypress run --env allure=false
 
-      # Executar Cypress com a configuração Allure
-      - name: Run Cypress tests with Allure reporter
-        run: npm run test
-
-      # Gerar o relatório com Allure
-      - name: Generate Allure report
-        run: npm run allure:generate
-
-      # Fazer upload do relatório Allure como artefato
-      - name: Upload Allure report
-        uses: actions/upload-artifact@v3
-        with:
-          name: allure-report
-          path: allure-report/*
-
-      # Gerar e fazer upload de relatório JUnit
-      - name: Run Cypress tests with JUnit reporter
-        run: npm run cy:test
-
-      # Merge dos relatórios JUnit
-      - name: Merge JUnit reports
-        run: npm run merge-reports
-
-      # Limpar resultados de Allure e relatórios antigos (opcional)
-      - name: Clean up Allure results and reports
-        run: npm run allure:clear
+      # Opcional: Verificar se os testes passaram
+      - name: Check test result
+        run: |
+          if grep -q "All tests passed!" cypress/results/*; then
+            echo "All tests passed!"
+          else
+            echo "Some tests failed"
+            exit 1
+          fi
