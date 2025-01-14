@@ -1,0 +1,14 @@
+[
+  {
+    "nome": "Rex",
+    "email": "Ima.Schmidt97@gmail.com",
+    "password": "xkOpAF8OGLkZmMR",
+    "administrador": "true"
+  },
+  {
+    "nome": "Catherine",
+    "email": "Mathias46@yahoo.com",
+    "password": "XIeupY7CoN0hrT9",
+    "administrador": "false"
+  }
+]
