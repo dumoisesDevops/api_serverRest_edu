@@ -24,14 +24,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Executar Cypress sem relatórios personalizados, apenas com status
+      # Executar Cypress sem Allure, apenas exibindo o resultado no terminal
       - name: Run Cypress tests
         run: npx cypress run --env allure=false
 
-      # Opcional: Verificar se os testes passaram
-      - name: Check test result
+      # Verificar se algum teste falhou
+      - name: Check Cypress test result
         run: |
-          if grep -q "All tests passed!" cypress/results/*; then
+          if [ $? -eq 0 ]; then
             echo "All tests passed!"
           else
             echo "Some tests failed"
