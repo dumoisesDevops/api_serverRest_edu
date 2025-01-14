@@ -24,11 +24,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      # Gerar dados (caso seja necessário)
+      - name: Generate test data
+        run: npm run generate-data
+
       # Executar Cypress com a configuração Allure
       - name: Run Cypress tests with Allure reporter
-        run: |
-          npm install --save-dev allure-commandline
-          npx cypress run --reporter allure --reporter-options allure-results=allure-report
+        run: npm run test
 
       # Gerar o relatório com Allure
       - name: Generate Allure report
@@ -40,3 +42,15 @@ jobs:
         with:
           name: allure-report
           path: allure-report/*
+
+      # Gerar e fazer upload de relatório JUnit
+      - name: Run Cypress tests with JUnit reporter
+        run: npm run cy:test
+
+      # Merge dos relatórios JUnit
+      - name: Merge JUnit reports
+        run: npm run merge-reports
+
+      # Limpar resultados de Allure e relatórios antigos (opcional)
+      - name: Clean up Allure results and reports
+        run: npm run allure:clear
