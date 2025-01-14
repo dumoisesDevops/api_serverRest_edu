@@ -1,0 +1,120 @@
+[
+
+  {
+
+    "nome": "João Silva",
+    "email": "joao.silva1736845930093@teste.com",
+    "password": "senha123",
+    "administrador": "true",
+    "_id": "0JZsXMQMtwCo0Xzc"
+  
+},
+  {
+
+    "nome": "Edd Morissette",
+    "email": "Daphney4@hotmail.com",
+    "password": "Ue6s82fxjS",
+    "administrador": "true",
+    "_id": "0W4pY7SYhnGRoVs9"
+  
+},
+  {
+
+    "nome": "Jospeh",
+    "email": "cordelia.veum@gmail.com",
+    "password": "kyolqt6d",
+    "administrador": "true",
+    "_id": "0dyU0LyynlK8HQQm"
+  
+},
+  {
+
+    "nome": "João da Silva",
+    "email": "abacate12@qa.com.br",
+    "password": "123456",
+    "administrador": "true",
+    "_id": "0uxuPY0cbmQhpEz1"
+  
+},
+  {
+
+    "nome": "Fulano da Silva",
+    "email": "dydq@emailteste.com",
+    "password": "1234",
+    "administrador": "true",
+    "_id": "0zRPHthJAMoK7OL9"
+  
+},
+  {
+
+    "nome": "Rex",
+    "email": "Ima.Schmidt97@gmail.com",
+    "password": "xkOpAF8OGLkZmMR",
+    "administrador": "true",
+    "_id": "11yxYMIBCdd4qeRK"
+  
+},
+  {
+
+    "nome": "Fulano da Silva",
+    "email": "mprs@emailteste.com",
+    "password": "1234",
+    "administrador": "true",
+    "_id": "1XtzvKitrS85uEDW"
+  
+},
+  {
+
+    "nome": "João Silva",
+    "email": "joao.silva1736802661455@teste.com",
+    "password": "senha123",
+    "administrador": "true",
+    "_id": "1eC4HYJPgVeq5X4W"
+  
+},
+  {
+
+    "nome": "Yuri",
+    "email": "yuri.escariao@beecrowd.com",
+    "password": "shivah01",
+    "administrador": "false",
+    "_id": "1mPRAPgpKGllmJiS"
+  
+},
+  {
+
+    "nome": "Dra. Maria Lu�sa Foga�a",
+    "email": "maria-isismelo@example.org",
+    "password": "123456",
+    "administrador": "true",
+    "_id": "1sM8TIRGVUK083Dv"
+  
+},
+  {
+
+    "nome": "João Silva",
+    "email": "joao.silva1736857305300@teste.com",
+    "password": "senha123",
+    "administrador": "true",
+    "_id": "28ECj7rvS0NYdBwb"
+  
+},
+  {
+
+    "nome": "Fulano da Silva",
+    "email": "fulano@qa.com",
+    "password": "teste",
+    "administrador": "true",
+    "_id": "2BUQUgGZffjUDF6g"
+  
+},
+  {
+
+    "nome": "João Silva",
+    "email": "joao.silva1736816053642@teste.com",
+    "password": "senha123",
+    "administrador": "true",
+    "_id": "2IDgAK4a9fRFxRgS"
+  
+}
+]

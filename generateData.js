@@ -19,6 +19,14 @@ const data = [
         "password": faker.internet.password(),
         "administrador": "false"
     },
+    {
+        "_id":"1sM8TIRGVUK083Dv",
+        "nome": faker.person.firstName(),
+        "email": faker.internet.email(),
+        "password": faker.internet.password(),
+        "administrador": "false"
+    },
+
 
 
 ];

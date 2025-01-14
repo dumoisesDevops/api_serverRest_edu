@@ -1,14 +1,21 @@
 [
   {
-    "nome": "Rex",
-    "email": "Ima.Schmidt97@gmail.com",
-    "password": "xkOpAF8OGLkZmMR",
+    "nome": "Mathew",
+    "email": "Laurine65@hotmail.com",
+    "password": "fWsmvCtj_LnugZw",
     "administrador": "true"
   },
   {
-    "nome": "Catherine",
-    "email": "Mathias46@yahoo.com",
-    "password": "XIeupY7CoN0hrT9",
+    "nome": "Jennifer",
+    "email": "Kenyatta10@gmail.com",
+    "password": "80Lq08LInIJJzsg",
+    "administrador": "false"
+  },
+  {
+    "_id": "1sM8TIRGVUK083Dv",
+    "nome": "Alicia",
+    "email": "Amya42@yahoo.com",
+    "password": "rJBvOaiQatp2oLt",
     "administrador": "false"
   }
 ]

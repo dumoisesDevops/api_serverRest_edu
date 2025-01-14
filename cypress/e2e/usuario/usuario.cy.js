@@ -28,10 +28,44 @@ describe('Testes de API endpojt usuario ', () => {
     });
   });
 
-    it('Deve listar usuários com sucesso', () => {
-      cy.getUsuarios().then((response) => {
-        expect(response.status).to.eq(200);
-      });
+  it('Deve listar usuários com sucesso', () => {
+    cy.getUsuarios().then((response) => {
+      expect(response.status).to.eq(200);
     });
+  });
 
-})
+  it('Nao existe id valido para excluir na base', () => {
+    cy.deleteUsuarioValido("0JZsXMQMtwCo0Xzc").then((response) => {
+      expect(response.status).to.eq(200);
+      expect(response.body).to.have.property("message", "Nenhum registro excluído")
+
+    });
+  });
+
+  it('Deve excluir registro', () => {
+    cy.deleteUsuarioValido("1XtzvKitrS85uEDW").then((response) => {
+      expect(response.status).to.eq(200);
+      expect(response.body).to.have.property("message", "Registro excluído com sucesso")
+
+    });
+  });
+
+
+  it('Deve atualizar um usuário existente', () => {
+    cy.putUsuarioValido("1sM8TIRGVUK083Dv").then((response) => {
+      expect(response.status).to.eq(200);
+      expect(response.body).to.have.property('message', 'Registro alterado com sucesso');
+    });
+  });
+
+
+  it('Deve listar usuario por id', () => {
+    cy.getUsuarioValido("1sM8TIRGVUK083Dv").then((response) => {
+      expect(response.status).to.eq(200);
+    });
+  });
+
+});
+      
+  
+
