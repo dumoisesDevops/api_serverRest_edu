@@ -18,10 +18,9 @@ jobs:
       
       # Executar Cypress com Mochawesome para gerar relatórios
       - name: Run Cypress tests with Mochawesome
-        run: |
-          npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator
-          npx cypress run --reporter mochawesome --reporter-options overwrite=false,html=false,json=true
-
+        run:  npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator
+         npx cypress run --headless --no-sandbox --disable-gpu --reporter mochawesome --reporter-options overwrite=false,html=false,json=true
+    
       # Gerar o relatório com Allure
       - name: Generate Allure report
         run: npm run allure:generate
