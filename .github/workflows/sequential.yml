@@ -13,24 +13,26 @@ jobs:
         with:
           node-version: '18'
 
+      - name: Cache npm dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-modules-
+
       - name: Install dependencies
         run: npm install
-      
-    
+
+      # Executar Cypress com a configuração Allure
+      - name: Run Cypress tests with Allure reporter
+        run: |
+          npm install --save-dev allure-commandline
+          npx cypress run --reporter allure --reporter-options allure-results=allure-report
+
       # Gerar o relatório com Allure
       - name: Generate Allure report
         run: npm run allure:generate
-
-      # Exibir o relatório com Allure (não será útil em CI, mas está incluído)
-      - name: Open Allure report (optional)
-        run: npm run allure:open || true # Adicionando || true para evitar falha, pois abrir o relatório não funcionará em CI
-
-      # Fazer upload do relatório de testes como artefato
-      - name: Upload Mochawesome report
-        uses: actions/upload-artifact@v3
-        with:
-          name: mochawesome-report
-          path: mochawesome-report/*.json
 
       # Fazer upload do relatório Allure como artefato
       - name: Upload Allure report
