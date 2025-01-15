@@ -28,7 +28,7 @@ jobs:
         run: npm run test  # Executa o Cypress com o reporter JUnit, gerando um arquivo `output.xml` em `results` e também exibindo o resultado no console.
 
       - name: Generate Allure report  # Passo para gerar o relatório Allure a partir dos resultados do Cypress.
-        run: allure generate results --clean -o allure-report  # Gera o relatório Allure usando o diretório `results` com a opção `--clean` para limpar relatórios anteriores e salva o relatório em `allure-report`.
+        run: npm run allure:generate  # Gera o relatório Allure 
 
       - name: Upload Allure report as artifact  # Passo para fazer upload do relatório Allure como um artefato no GitHub Actions.
         uses: actions/upload-artifact@v3  # Ação para fazer upload de arquivos como artefatos no GitHub.
