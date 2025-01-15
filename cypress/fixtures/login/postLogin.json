@@ -1,35 +1,27 @@
 [
-    {
-      "email": "beltranoaaa@qa.com.br",
-      "password": "teste"
-    },
-    {
-      "email": "Geo61@yahoo.com",
-      "password": "BWctGRAAxVj9rFa"
-    },
-    {
-      "email": "Susan.Greenholt@yahoo.com",
-      "password": "bvu1J4VHoZiGvES"
-    },
-    {
-      "email": "Mya.Hettinger44@yahoo.com",
-      "password": "dHnYHClKmSt29ds"
-    },
-    {
-      "email": "Rafael0cZMf@qa.com.br",
-      "password": "RafaelBhMnx"
-    },
-    {
-      "email": "ndsy@emailteste.com",
-      "password": "1234"
-    },
-    {
-      "email": "Antonio.Robel@gmail.com",
-      "password": "iPEjeiebzq4vOco"
-    },
-    {
-      "email": "reynalda.upton@yahoo.com",
-      "password": "pr2pou8g6v"
-    }
-  ]
-  
+  {
+    "email": "lunna92@example.com",
+    "password": "123456",
+    "valido": true
+  },
+  {
+    "email": "ygoh@testmail.com",
+    "password": "123456",
+    "valido": true
+  },
+  {
+    "email": "fulano@qa.com",
+    "password": "teste",
+    "valido": true
+  },
+  {
+    "email": "joao.silva1736921801259@teste.com",
+    "password": "senha123",
+    "valido": true
+  },
+  {
+    "email": "Nicolas38@hotmail.com",
+    "password": "77teste",
+    "valido": false
+  }
+]

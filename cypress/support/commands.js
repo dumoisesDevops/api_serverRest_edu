@@ -130,4 +130,35 @@ Cypress.Commands.add('postLogin', (valido) => {
       });
     });
   });
+  // Post criacao de produtos  
+Cypress.Commands.add('postProduto', (valido) => {
+    cy.fixture('dataProdutos').then((items) => {
+      let selectedProdutos;
+      if (valido !== undefined) {
+        selectedProdutos = items.find(item => item.valido === valido);
+      }
+      if (!selectedProdutos) {
+        const randomIndex = Math.floor(Math.random() * items.length);
+        selectedProdutos = items[randomIndex];
+      }
+  
+      // Realizar cadastro com produto selecionado
+      cy.api({
+        url: `${Cypress.env('API_URL')}/produtos`,
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: {
+          nome: selectedProdutos.nome,
+          preco: selectedProdutos.preco,
+          descricao: selectedProdutos.descricao,
+          quantidade: selectedProdutos.quantidade,
+        },
+        failOnStatusCode: false
+      }).then(response => {
+        return response;
+      });
+    });
+  });
   

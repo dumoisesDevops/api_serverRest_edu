@@ -26,6 +26,13 @@ const data = [
         "password": faker.internet.password(),
         "administrador": "false"
     },
+    {
+        "nome": faker.person.zodiacSign(),
+        "preco": faker.commerce.price(),
+        "descricao": faker.word.words(),
+        "quantidade": faker.number({ min: 1, max: 3 }),
+        "valido": true
+      }
 
 
 

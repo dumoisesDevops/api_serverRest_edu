@@ -1,0 +1,16 @@
+[
+    {
+        "nome": "Gorgeous Cotton Shirt",
+        "preco": "187.12",
+        "descricao": "New Ball model with 68 GB RAM, 42 GB storage, and peaceful features",
+        "quantidade": 3,
+        "valido": true
+    },
+    {
+        "nome": "Produto Teste 1736921805840",
+        "preco": 100,
+        "descricao": "Descrição do produto",
+        "quantidade": 10,
+        "valido": false
+    }
+]
