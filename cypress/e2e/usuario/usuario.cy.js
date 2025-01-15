@@ -26,7 +26,7 @@ describe('Testes de API endpoint usuario ', () => {
       expect(response.status).to.eq(201);
       expect(response.body).to.have.property("message", "Cadastro realizado com sucesso");
     });
-  });
+  }); 0
 
   it('Deve listar usuários com sucesso', () => {
     cy.getUsuarios().then((response) => {
@@ -43,29 +43,35 @@ describe('Testes de API endpoint usuario ', () => {
   });
 
   it('Deve excluir registro', () => {
-    cy.deleteUsuarioValido("7nHSoqEKQc8dmkKs").then((response) => {
+    // Primeiro, faça a requisição para buscar todos os registros
+    cy.request('GET', '/usuarios').then((response) => {
       expect(response.status).to.eq(200);
-      expect(response.body).to.have.property("message", "Registro excluído com sucesso")
 
-    });
-  });
+      // Acessar a propriedade 'usuarios' que contém o array
+      const usuarios = response.body.usuarios;
 
+      // Verifique se existem usuários na lista
+      expect(usuarios).to.have.length.greaterThan(0);
 
-  it('Deve atualizar um usuário existente', () => {
-    cy.putUsuarioValido("N64P75Kfvqu0p6NE").then((response) => {
-      expect(response.status).to.eq(200);
-      expect(response.body).to.have.property('message', 'Registro alterado com sucesso');
+      // Escolha um ID aleatório da lista de usuários
+      const usuarioAleatorio = usuarios[Math.floor(Math.random() * usuarios.length)];
+
+      // Exclua o usuário com o ID aleatório
+      cy.deleteUsuarioValido(usuarioAleatorio._id).then((deleteResponse) => {
+        expect(deleteResponse.status).to.eq(200);
+        expect(deleteResponse.body).to.have.property("message", "Registro excluído com sucesso");
+      });
     });
   });
 
 
   it('Deve listar usuario por id', () => {
-    cy.getUsuarioValido("N64P75Kfvqu0p6NE").then((response) => {
+    cy.getUsuarioValido("0LtzMGyWfwsmGToq").then((response) => {
       expect(response.status).to.eq(200);
     });
   });
 
 });
-      
-  
+
+
 

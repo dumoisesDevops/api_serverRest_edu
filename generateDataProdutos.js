@@ -8,8 +8,15 @@ const data = [
     "nome": faker.commerce.productName(),
     "preco": faker.commerce.price(),
     "descricao": faker.commerce.productDescription(),
-    "quantidade": faker.number.int({ min: 1, max: 3 }), // Correção: faker.number.int()
+    "quantidade": faker.number.int({ min: 1, max: 3 }), 
     "valido": true
+  }, 
+  {
+    "_id": "hRZeOkwMaN3FJQRL",
+    "nome": faker.commerce.productName(),
+    "preco": faker.commerce.price(),
+    "descricao": faker.commerce.productDescription(),
+    "quantidade": faker.number.int({ min: 1, max: 3 }), 
   }
 ];
 

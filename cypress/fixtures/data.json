@@ -1,21 +1,28 @@
 [
   {
-    "nome": "Hannah",
-    "email": "Ellis57@hotmail.com",
-    "password": "FmDfcmDpCKN04Mp",
+    "nome": "Simone",
+    "email": "Susie48@yahoo.com",
+    "password": "wOkVuRomTtV9pe6",
     "administrador": "true"
   },
   {
-    "nome": "Julia",
-    "email": "Monte95@yahoo.com",
-    "password": "ZpHfdMDTlYhqadt",
+    "nome": "Claudine",
+    "email": "Sister_Hudson63@yahoo.com",
+    "password": "hPv5WBqLVlKRgqL",
     "administrador": "false"
   },
   {
     "_id": "N64P75Kfvqu0p6NE",
-    "nome": "Adolfo",
-    "email": "Amely_Bergnaum79@yahoo.com",
-    "password": "EplVlumW8ydNnuV",
+    "nome": "Corbin",
+    "email": "Fanny64@gmail.com",
+    "password": "oZqZ3c6Jk08HE9v",
     "administrador": "false"
+  },
+  {
+    "nome": "Sagittarius",
+    "preco": "928.79",
+    "descricao": "over",
+    "quantidade": 2,
+    "valido": true
   }
 ]
