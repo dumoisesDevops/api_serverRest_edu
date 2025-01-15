@@ -1,35 +1,37 @@
-name: End-to-end tests
-on: push
+name: End-to-end tests  # Nome do pipeline para identificar o propósito da execução, que é rodar os testes de ponta a ponta.
+
+on: push  # Define que o pipeline será acionado quando houver um push para o repositório.
 
 jobs:
-  cypress-run:
-    runs-on: ubuntu-24.04
+  cypress-run:  # Job que será executado com os testes Cypress.
+    runs-on: ubuntu-24.04  # Define que a execução será feita em uma máquina virtual com a versão do Ubuntu 24.04.
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - name: Checkout code  # Passo para fazer o checkout do código-fonte do repositório.
+        uses: actions/checkout@v4  # Ação que faz o download do código no repositório.
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Set up Node.js  # Passo para configurar o Node.js na máquina virtual.
+        uses: actions/setup-node@v3  # Ação para configurar o Node.js no ambiente da CI.
         with:
-          node-version: '16'
+          node-version: '16'  # Especifica a versão do Node.js a ser usada (neste caso, a versão 16).
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install dependencies  # Passo para instalar as dependências do projeto.
+        run: npm install  # Executa o comando `npm install` para instalar as dependências listadas no `package.json`.
 
-      - name: Install Allure CLI
-        run: npm install -g allure-commandline
+      - name: Install Allure CLI  # Passo para instalar a ferramenta Allure para geração de relatórios.
+        run: npm install -g allure-commandline  # Instala a CLI do Allure globalmente para ser usada na geração de relatórios.
 
-      - name: Create results directory
-        run: mkdir -p results
+      - name: Create results directory  # Passo para criar o diretório onde os resultados dos testes serão armazenados.
+        run: mkdir -p results  # Cria a pasta `results` onde o arquivo de resultados dos testes será salvo.
 
-      - name: Run Cypress tests and generate output.xml
-        run: npx cypress run --reporter junit --reporter-options "mochaFile=results/output.xml,toConsole=true"
+      - name: Run Cypress tests and generate output.xml  # Passo para rodar os testes Cypress e gerar um arquivo XML com os resultados.
+        run: npx cypress run --reporter junit --reporter-options "mochaFile=results/output.xml,toConsole=true"  # Executa o Cypress com o reporter JUnit, gerando um arquivo `output.xml` em `results` e também exibindo o resultado no console.
 
-      - name: Generate Allure report
-        run: allure generate results --clean -o allure-report
+      - name: Generate Allure report  # Passo para gerar o relatório Allure a partir dos resultados do Cypress.
+        run: allure generate results --clean -o allure-report  # Gera o relatório Allure usando o diretório `results` com a opção `--clean` para limpar relatórios anteriores e salva o relatório em `allure-report`.
 
-      - name: Upload Allure report as artifact
-        uses: actions/upload-artifact@v3
+      - name: Upload Allure report as artifact  # Passo para fazer upload do relatório Allure como um artefato no GitHub Actions.
+        uses: actions/upload-artifact@v3  # Ação para fazer upload de arquivos como artefatos no GitHub.
         with:
-          name: allure-report
-          path: allure-report
+          name: allure-report  # Nome dado ao artefato.
+          path: allure-report  # Caminho do diretório que contém o relatório Allure a ser enviado como artefato.
