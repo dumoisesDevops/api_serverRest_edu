@@ -16,32 +16,20 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Install Allure CLI
+        run: npm install -g allure-commandline
+
       - name: Create results directory
         run: mkdir -p results
 
       - name: Run Cypress tests and generate output.xml
         run: npx cypress run --reporter junit --reporter-options "mochaFile=results/output.xml,toConsole=true"
 
-      - name: Check if output.xml is generated
-        run: ls -l results/output.xml
-
-      - name: Install Allure commandline
-        run: |
-          curl -o allure.zip -L https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/2.14.0/allure-commandline-2.14.0.zip
-          unzip allure.zip -d allure
-          sudo mv allure/allure-2.14.0/bin/allure /usr/local/bin/allure
-
       - name: Generate Allure report
-        run: allure generate results --clean
+        run: allure generate results --clean -o allure-report
 
       - name: Upload Allure report as artifact
         uses: actions/upload-artifact@v3
         with:
           name: allure-report
-          path: allure-report/
-
-      - name: Upload test results as artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-results
-          path: results/output.xml
+          path: allure-report
