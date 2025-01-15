@@ -1,4 +1,4 @@
-describe('Testes de API endpojt usuario ', () => {
+describe('Testes de API endpoint usuario ', () => {
 
   // Carrega o arquivo JSON com o faker
   before(() => {

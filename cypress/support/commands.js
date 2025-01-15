@@ -100,3 +100,34 @@ Cypress.Commands.add('getUsuarioValido', (id = '') => {
         return response;
     });
 });
+
+// Post login 
+Cypress.Commands.add('postLogin', (valido) => {
+    cy.fixture('login/postLogin').then((items) => {
+      let selectedUser;
+      if (valido !== undefined) {
+        selectedUser = items.find(item => item.valido === valido);
+      }
+      if (!selectedUser) {
+        const randomIndex = Math.floor(Math.random() * items.length);
+        selectedUser = items[randomIndex];
+      }
+  
+      // Realizar o login com o usuário selecionado
+      cy.api({
+        url: `${Cypress.env('API_URL')}/login`,
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: {
+          email: selectedUser.email,
+          password: selectedUser.password
+        },
+        failOnStatusCode: false
+      }).then(response => {
+        return response;
+      });
+    });
+  });
+  
