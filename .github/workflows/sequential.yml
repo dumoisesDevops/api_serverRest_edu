@@ -8,7 +8,7 @@ jobs:
 
     strategy:
       matrix:
-        test-file: [login/login.cy.js, produtos/produto.cy.js, usuario/usuario.cy.js]  # Arquivos de teste a serem executados em paralelo
+        test-file: [login/login.cy.js, produtos/produtos.cy.js, usuario/usuario.cy.js]  # Arquivos de teste a serem executados em paralelo
 
     steps:
       - name: Checkout code  # Faz o checkout do repositório
@@ -23,7 +23,7 @@ jobs:
         run: npm install
 
       - name: Run API test on ${{ matrix.test-file }}  # Roda os testes de API para o arquivo específico
-        run: npm run test:api -- ${matrix.test-file}  # Comando para rodar o teste específico do arquivo
+        run: npm run test:api -- "cypress/e2e/${{ matrix.test-file }}"  # Correção aqui
 
       - name: Upload Test Results  # Faz o upload dos resultados dos testes (opcional, para gerar relatórios)
         uses: actions/upload-artifact@v4

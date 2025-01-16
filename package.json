@@ -4,6 +4,7 @@
   "description": "Desafio de Automação de Testes de API",
   "main": "index.js",
   "scripts": {
+    "test:api": "cypress run --spec",
     "generate-data": "node generateData.js",
     "generate-produtos": "node generateDataProdutos.js",
     "test": "npx cypress run --env allure=true",
