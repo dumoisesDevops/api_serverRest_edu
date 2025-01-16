@@ -1,27 +1,27 @@
 [
   {
-    "nome": "Valerie",
-    "email": "Maudie.Erdman@hotmail.com",
-    "password": "H9dxslsvysKAlKl",
+    "nome": "Lorena",
+    "email": "Ansel.Koss32@gmail.com",
+    "password": "Jm9xOnPfsf_LNuw",
     "administrador": "true"
   },
   {
-    "nome": "Rubie",
-    "email": "Aaliyah79@yahoo.com",
-    "password": "gqcnEponCaGt68a",
+    "nome": "Elta",
+    "email": "Lottie_Jast@yahoo.com",
+    "password": "kI9JAGQlUQTd5UT",
     "administrador": "false"
   },
   {
     "_id": "N64P75Kfvqu0p6NE",
-    "nome": "Leon",
-    "email": "Marion95@hotmail.com",
-    "password": "tIa90_uiVsHswu3",
+    "nome": "Jalen",
+    "email": "Jamil80@gmail.com",
+    "password": "DhPDcRoNCON32Xx",
     "administrador": "false"
   },
   {
-    "nome": "Leo",
-    "preco": "508.49",
-    "descricao": "woot puppet",
+    "nome": "Libra",
+    "preco": "137.19",
+    "descricao": "ouch",
     "quantidade": 3,
     "valido": true
   }
