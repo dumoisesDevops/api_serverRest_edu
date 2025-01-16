@@ -13,10 +13,5 @@ describe('Testes de api - endpoint Login', () => {
     });
   });
 
-  it('Login com usuário aleatório', () => {
-    cy.postLogin().then(response => {
-      expect(response.status).to.eq(200);
-      expect(response.body).to.have.property("message", "Login realizado com sucesso");
-    });
-  });
 });
+

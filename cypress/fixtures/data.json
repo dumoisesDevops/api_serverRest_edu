@@ -1,28 +1,28 @@
 [
   {
-    "nome": "Clare",
-    "email": "Friedrich.Barrows@hotmail.com",
-    "password": "UUnSXg4Pt_1xwAl",
+    "nome": "Valerie",
+    "email": "Maudie.Erdman@hotmail.com",
+    "password": "H9dxslsvysKAlKl",
     "administrador": "true"
   },
   {
-    "nome": "Victoria",
-    "email": "Louvenia_Kuhn3@hotmail.com",
-    "password": "fKrBUgG2Bv89BQT",
+    "nome": "Rubie",
+    "email": "Aaliyah79@yahoo.com",
+    "password": "gqcnEponCaGt68a",
     "administrador": "false"
   },
   {
     "_id": "N64P75Kfvqu0p6NE",
-    "nome": "Ramona",
-    "email": "Dallas.Carter@yahoo.com",
-    "password": "UNC62mR819rJmjA",
+    "nome": "Leon",
+    "email": "Marion95@hotmail.com",
+    "password": "tIa90_uiVsHswu3",
     "administrador": "false"
   },
   {
-    "nome": "Virgo",
-    "preco": "547.49",
-    "descricao": "treble",
-    "quantidade": 2,
+    "nome": "Leo",
+    "preco": "508.49",
+    "descricao": "woot puppet",
+    "quantidade": 3,
     "valido": true
   }
 ]
