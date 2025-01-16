@@ -4,7 +4,7 @@ on: push  # O pipeline será acionado em um push
 
 jobs:
   api-tests:
-    runs-on: ubuntu-latest  # Usando uma imagem do Ubuntu para rodar os testes de API
+    runs-on: ubuntu-24.04 # Usando uma imagem do Ubuntu para rodar os testes de API
 
     strategy:
       matrix:
@@ -23,10 +23,12 @@ jobs:
         run: npm install
 
       - name: Run API test on ${{ matrix.test-file }}  # Roda os testes de API para o arquivo específico
-        run: npm run test:api -- "cypress/e2e/${{ matrix.test-file }}"  # Correção aqui
-
+        run: npm run test:api -- "cypress/e2e/${{ matrix.test-file }}"  # Comando para rodar os testes no arquivo específico
+      
       - name: Generate Allure report  # Gera o relatório Allure
-        run: npm run allure:generate  # Certifique-se de ter o script allure:generate no seu package.json
+        run: |
+          npm run test  # Executa os testes com o Allure ativado
+          npm run allure:generate  # Gera o relatório Allure na pasta allure-report
 
       - name: Set artifact name  # Passo para definir o nome do artefato
         id: set_name
@@ -38,4 +40,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.artifact_name }}  # Agora, acessamos corretamente a variável de ambiente
-          path: results/allure-report  # Caminho para o diretório do relatório gerado
+          path: allure-report  # O relatório gerado estará na pasta allure-report
