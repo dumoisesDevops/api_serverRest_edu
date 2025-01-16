@@ -1,28 +1,28 @@
 [
   {
-    "nome": "Marcelo",
-    "email": "Annamarie37@hotmail.com",
-    "password": "pUVgMNSyKPL3yGn",
+    "nome": "Clare",
+    "email": "Friedrich.Barrows@hotmail.com",
+    "password": "UUnSXg4Pt_1xwAl",
     "administrador": "true"
   },
   {
-    "nome": "Alvis",
-    "email": "Yasmine_Wolff@gmail.com",
-    "password": "qLC65hvenvYDMVF",
+    "nome": "Victoria",
+    "email": "Louvenia_Kuhn3@hotmail.com",
+    "password": "fKrBUgG2Bv89BQT",
     "administrador": "false"
   },
   {
     "_id": "N64P75Kfvqu0p6NE",
-    "nome": "Elvera",
-    "email": "Ethan.OConnell@yahoo.com",
-    "password": "hN_mjt17lpAcYTg",
+    "nome": "Ramona",
+    "email": "Dallas.Carter@yahoo.com",
+    "password": "UNC62mR819rJmjA",
     "administrador": "false"
   },
   {
-    "nome": "Aquarius",
-    "preco": "139.75",
-    "descricao": "honorable after psst",
-    "quantidade": 3,
+    "nome": "Virgo",
+    "preco": "547.49",
+    "descricao": "treble",
+    "quantidade": 2,
     "valido": true
   }
 ]
