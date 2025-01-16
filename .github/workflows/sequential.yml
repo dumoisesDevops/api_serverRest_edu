@@ -24,9 +24,9 @@ jobs:
 
       - name: Run API test on ${{ matrix.test-file }}  # Roda os testes de API para o arquivo específico
         run: npm run test:api -- "cypress/e2e/${{ matrix.test-file }}"  # Correção aqui
-      
+
       - name: Generate Allure report  # Gera o relatório Allure
-        run: npm run allure:generate
+        run: npm run allure:generate  # Certifique-se de ter o script allure:generate no seu package.json
 
       - name: Set artifact name  # Passo para definir o nome do artefato
         id: set_name
@@ -34,8 +34,8 @@ jobs:
           ARTIFACT_NAME=$(echo "${{ matrix.test-file }}" | sed 's/\//-/g')
           echo "artifact_name=$ARTIFACT_NAME" >> $GITHUB_ENV  # Salva a variável de ambiente
 
-      - name: Upload Test Results as Artifact  # Faz o upload dos resultados dos testes
+      - name: Upload Allure report as Artifact  # Faz o upload do relatório Allure como artefato
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.artifact_name }}  # Agora, acessamos corretamente a variável de ambiente
-          path: results/
+          path: results/allure-report  # Caminho para o diretório do relatório gerado
