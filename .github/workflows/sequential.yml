@@ -8,7 +8,7 @@ jobs:
 
     strategy:
       matrix:
-        test-file: [login/login.cy.js, produtos/produtos.cy.js, usuario/usuario.cy.js]  # Arquivos de teste a serem executados em paralelo
+        test-file: [login/login.cy.js, produtos/produto.cy.js, usuario/usuario.cy.js]  # Arquivos de teste a serem executados em paralelo
 
     steps:
       - name: Checkout code  # Faz o checkout do repositório
@@ -28,5 +28,5 @@ jobs:
       - name: Upload Test Results  # Faz o upload dos resultados dos testes (opcional, para gerar relatórios)
         uses: actions/upload-artifact@v4
         with:
-          name: api-test-results-${{ matrix.test-file }}  # Nome do artefato para cada teste
+          name: api-test-results-${{ matrix.test-file }}  # Substitui a barra por hífen
           path: results/  # Caminho para os resultados, ajuste conforme necessário
