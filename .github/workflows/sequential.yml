@@ -24,9 +24,9 @@ jobs:
 
       - name: Run API test on ${{ matrix.test-file }}  # Roda os testes de API para o arquivo específico
         run: npm run test:api -- "cypress/e2e/${{ matrix.test-file }}"  # Correção aqui
-
-      - name: Upload Test Results  # Faz o upload dos resultados dos testes (opcional, para gerar relatórios)
+      
+      - name: Upload Test Results  # Faz o upload dos resultados dos testes
         uses: actions/upload-artifact@v4
         with:
-          name: api-test-results-${{ matrix.test-file }}  # Substitui a barra por hífen
-          path: results/  # Caminho para os resultados, ajuste conforme necessário
+          name: api-test-results-${{ matrix.test-file }}  # Nome do artefato com o nome do arquivo de teste
+          path: results/
