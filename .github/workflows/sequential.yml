@@ -1,16 +1,14 @@
-name: End-to-end tests  # Nome do pipeline
+name: End-to-end API tests  # Nome do pipeline
 
 on: push  # O pipeline será acionado em um push
 
 jobs:
-  cypress-run:  # Job para rodar testes Cypress
-    runs-on: ubuntu-24.04
+  api-tests:
+    runs-on: ubuntu-latest  # Usando uma imagem do Ubuntu para rodar os testes de API
 
     strategy:
       matrix:
-        node-version: [16]  # Versão do Node.js a ser usada
-        browser: [chrome, firefox]  # Browsers para rodar os testes em paralelo
-        test-file: [login/login.cy.js, produtos/produtos.cy.js, usuario/usuario.cy.js]  # Caminhos corretos dos arquivos de teste
+        test-file: [login/login.cy.js, produtos/produto.cy.js, usuario/usuario.cy.js]  # Arquivos de teste a serem executados em paralelo
 
     steps:
       - name: Checkout code  # Faz o checkout do repositório
@@ -19,30 +17,16 @@ jobs:
       - name: Set up Node.js  # Configura Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}  # Usa a versão do Node.js definida na matriz
+          node-version: '16'  # Versão do Node.js a ser usada
 
       - name: Install dependencies  # Instala as dependências do projeto
         run: npm install
 
-      - name: Install Allure CLI  # Instala o Allure para gerar relatórios
-        run: npm install -g allure-commandline
+      - name: Run API test on ${{ matrix.test-file }}  # Roda os testes de API para o arquivo específico
+        run: npm run test:api -- ${matrix.test-file}  # Comando para rodar o teste específico do arquivo
 
-      - name: Create results directory  # Cria o diretório para resultados
-        run: mkdir -p results
-
-      - name: Run Cypress tests on ${{ matrix.browser }} for ${{ matrix.test-file }}  # Roda os testes
-        run: |
-          if [ "${{ matrix.browser }}" == "chrome" ]; then
-            npx cypress run --browser chrome --headless --spec "cypress/e2e/${{ matrix.test-file }}"
-          elif [ "${{ matrix.browser }}" == "firefox" ]; then
-            npx cypress run --browser firefox --headless --spec "cypress/e2e/${{ matrix.test-file }}"
-          fi
-
-      - name: Generate Allure report  # Gera o relatório Allure
-        run: allure generate results --clean -o allure-report
-
-      - name: Upload Allure report as artifact  # Faz o upload do relatório como artefato
+      - name: Upload Test Results  # Faz o upload dos resultados dos testes (opcional, para gerar relatórios)
         uses: actions/upload-artifact@v4
         with:
-          name: allure-report-${{ matrix.browser }}-${{ matrix.test-file }}  # Nomeia o artefato
-          path: allure-report
+          name: api-test-results-${{ matrix.test-file }}  # Nome do artefato para cada teste
+          path: results/  # Caminho para os resultados, ajuste conforme necessário

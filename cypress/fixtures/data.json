@@ -1,28 +1,28 @@
 [
   {
-    "nome": "Grover",
-    "email": "Kade.Boyle7@gmail.com",
-    "password": "0bnoOXF5uRwA_pA",
+    "nome": "Marcelo",
+    "email": "Annamarie37@hotmail.com",
+    "password": "pUVgMNSyKPL3yGn",
     "administrador": "true"
   },
   {
-    "nome": "Fredrick",
-    "email": "Riley.Hirthe@hotmail.com",
-    "password": "GG8VOJaAOMOHW85",
+    "nome": "Alvis",
+    "email": "Yasmine_Wolff@gmail.com",
+    "password": "qLC65hvenvYDMVF",
     "administrador": "false"
   },
   {
     "_id": "N64P75Kfvqu0p6NE",
-    "nome": "Terry",
-    "email": "Bertrand_Labadie9@yahoo.com",
-    "password": "YI2ATwtnoPJsWPK",
+    "nome": "Elvera",
+    "email": "Ethan.OConnell@yahoo.com",
+    "password": "hN_mjt17lpAcYTg",
     "administrador": "false"
   },
   {
-    "nome": "Capricorn",
-    "preco": "546.69",
-    "descricao": "er configuration tuba",
-    "quantidade": 1,
+    "nome": "Aquarius",
+    "preco": "139.75",
+    "descricao": "honorable after psst",
+    "quantidade": 3,
     "valido": true
   }
 ]
