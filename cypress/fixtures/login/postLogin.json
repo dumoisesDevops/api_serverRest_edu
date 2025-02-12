@@ -1,21 +1,21 @@
 [
   {
-    "email": "lunna92@example.com",
-    "password": "123456",
+    "email": "defaultUser3@example.com",
+    "password": "password123",
     "valido": true
   },
   {
-    "email": "ygoh@testmail.com",
-    "password": "123456",
+    "email": "Kevon.Ebert@gmail.com",
+    "password": "ZDO0llZ9hlHKpvQ",
     "valido": true
   },
   {
-    "email": "fulano@qa.com",
-    "password": "teste",
+    "email": "noobqa@test.com",
+    "password": "teste123",
     "valido": true
   },
   {
-    "email": "Cindy@uriah.name",
+    "email": "leandro3@qa.com.br",
     "password": "teste",
     "valido": true
   },
