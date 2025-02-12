@@ -8,9 +8,16 @@ Para a automação dos testes foi utilizado o framework [Cypress](https://www.cy
 
  **GitHub Actions** para automação da integração contínua, onde os testes são executados simultaneamente em **imagens diferentes**,
   utilizando paralelismo para melhorar a performance.
+  
+**Massa de dados dinamicas 
 
+**faker**
 Além disso, são utilizadas massas de dados geradas dinamicamente com a biblioteca [Faker](https://www.npmjs.com/package/faker)
  para evitar o uso de dados estáticos.
+**Mocks API**
+Foi  realizado um  teste para cadastrar novos usuarios,  com  api mock 
+https://jsonplaceholder.typicode.com/user  e  caso ela falhe para nao quebrar o teste o teste esta  configurado para  buscar em uma pai alternativa
+https://reqres.in/api/users
 
 ### Relatório Allure
 O relatório Allure é gerado automaticamente como artefato no pipeline, permitindo o acesso fácil aos resultados dos testes após cada execução.
