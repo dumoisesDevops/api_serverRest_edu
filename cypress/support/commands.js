@@ -7,8 +7,8 @@ Cypress.Commands.add('login', () => {
             'Content-Type': 'application/json'
         },
         body: {
-            email: 'ygoh@testmail.com',   // Suas credenciais
-            password: '123456'
+            email: 'defaultUser3@example.com',   // Suas credenciais
+            password: 'password123'
         }
     }).then(response => {
         const token = response.body.token;

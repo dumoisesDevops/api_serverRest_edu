@@ -11,7 +11,7 @@ describe('Testes de API endpoint produto ', () => {
     });
 
     it('Deve listar usuario por id', () => {
-        cy.getProdutoValido("0NACKWMZlDVuIHzT").then((response) => {
+        cy.getProdutoValido("BeeJh5lz3k6kSIzA").then((response) => {
             expect(response.status).to.eq(200);
         });
     });

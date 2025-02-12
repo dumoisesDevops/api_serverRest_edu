@@ -1,28 +1,28 @@
 [
   {
-    "nome": "Axel",
-    "email": "Jodie_Littel54@hotmail.com",
-    "password": "xDEVxj5P1NbX6Ws",
+    "nome": "Leonardo",
+    "email": "Dashawn17@hotmail.com",
+    "password": "gfZ9xGBmh2Hyied",
     "administrador": "true"
   },
   {
-    "nome": "Chandler",
-    "email": "Kevon.Ebert@gmail.com",
-    "password": "ZDO0llZ9hlHKpvQ",
+    "nome": "Imelda",
+    "email": "Magali23@hotmail.com",
+    "password": "l_BssbEpDb5v7mH",
     "administrador": "false"
   },
   {
     "_id": "N64P75Kfvqu0p6NE",
-    "nome": "Narciso",
-    "email": "Aditya_Nicolas88@gmail.com",
-    "password": "UZIdVkT6ARhIaWk",
+    "nome": "Woodrow",
+    "email": "Pasquale.Medhurst@hotmail.com",
+    "password": "LTv1m9lnpK5XtW6",
     "administrador": "false"
   },
   {
     "nome": "Capricorn",
-    "preco": "740.39",
-    "descricao": "inside clean",
-    "quantidade": 2,
+    "preco": "140.25",
+    "descricao": "underneath intensely than",
+    "quantidade": 3,
     "valido": true
   }
 ]
