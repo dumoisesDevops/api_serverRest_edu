@@ -66,7 +66,7 @@ describe('Testes de API endpoint usuario ', () => {
 
 
   it('Deve listar usuario por id', () => {
-    cy.getUsuarioValido("0LtzMGyWfwsmGToq").then((response) => {
+    cy.getUsuarioValido("0uxuPY0cbmQhpEz1").then((response) => {
       expect(response.status).to.eq(200);
     });
   });

@@ -1,28 +1,28 @@
 [
   {
-    "nome": "Lorena",
-    "email": "Ansel.Koss32@gmail.com",
-    "password": "Jm9xOnPfsf_LNuw",
+    "nome": "Axel",
+    "email": "Jodie_Littel54@hotmail.com",
+    "password": "xDEVxj5P1NbX6Ws",
     "administrador": "true"
   },
   {
-    "nome": "Elta",
-    "email": "Lottie_Jast@yahoo.com",
-    "password": "kI9JAGQlUQTd5UT",
+    "nome": "Chandler",
+    "email": "Kevon.Ebert@gmail.com",
+    "password": "ZDO0llZ9hlHKpvQ",
     "administrador": "false"
   },
   {
     "_id": "N64P75Kfvqu0p6NE",
-    "nome": "Jalen",
-    "email": "Jamil80@gmail.com",
-    "password": "DhPDcRoNCON32Xx",
+    "nome": "Narciso",
+    "email": "Aditya_Nicolas88@gmail.com",
+    "password": "UZIdVkT6ARhIaWk",
     "administrador": "false"
   },
   {
-    "nome": "Libra",
-    "preco": "137.19",
-    "descricao": "ouch",
-    "quantidade": 3,
+    "nome": "Capricorn",
+    "preco": "740.39",
+    "descricao": "inside clean",
+    "quantidade": 2,
     "valido": true
   }
 ]
